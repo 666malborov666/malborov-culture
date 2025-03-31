@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интеллигенция Интернета</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: green;
+            font-family: 'Courier New', Courier, monospace;
+            overflow: hidden;
+        }
+
+        .header {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .menu-button {
+            background-color: transparent;
+            border: 2px solid green;
+            color: green;
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .menu-button:hover {
+            background-color: green;
+            color: black;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .glitch {
+            font-size: 48px;
+            position: relative;
+            color: green;
+            text-shadow: 0 0 5px green, 0 0 10px green, 0 0 20px green;
+        }
+
+        .output {
+            margin-top: 20px;
+            font-size: 24px;
+            color: green;
+            white-space: pre-wrap;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <button class="menu-button" onclick="showProject()">Наш проект</button>
+        <button class="menu-button" onclick="showAbout()">О нас</button>
+        <button class="menu-button" onclick="showContact()">Связь</button>
+    </div>
+    <div class="content">
+        <h1 class="glitch" data-text="Интеллигенция Интернета">Интеллигенция Интернета</h1>
+        <div id="output" class="output"></div>
+    </div>
+    <script>
+        function showProject() {
+            const output = document.getElementById('output');
+            output.innerHTML = '';
+            output.style.opacity = 0;
+            setTimeout(() => {
+                typeWriter("Наш резерв: https://t.me/+-DCW1Piw35o1ZDli\nНаша основа: https://t.me/+nOGI-4JJmwkxZWEy", output);
+            }, 500);
+        }
+
+        function showAbout() {
+            const output = document.getElementById('output');
+            output.innerHTML = '';
+            output.style.opacity = 0;
+            setTimeout(() => {
+                typeWriter("Мы лояльная и адекватная группа\n\"Telegram\" которая не нарушает правила пользования площадкой)! по этому добро пожаловать! вы попали на официальный сайт нашей интернет культуры здесь мы общаемся, учимся, развиваемся в сфере кибер-безопасности и айти Так же просто комфортное общение. :)", output);
+            }, 500);
+        }
+
+        function showContact() {
+            const output = document.getElementById('output');
+            output.innerHTML = '';
+            output.style.opacity = 0;
+            setTimeout(() => {
+                typeWriter("Владелец: t.me/ramoksociety\nМенеджер: @requests_help_bot", output);
+            }, 500);
+        }
+
+        function typeWriter(text, output) {
+            let i = 0;
+            output.style.opacity = 1;
+            const interval = setInterval(() => {
+                if (i < text.length) {
+                    output.innerHTML += text.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(interval);
+                }
+            }, 50);
+        }
+    </script>
+</body>
+</html>
